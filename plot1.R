@@ -1,3 +1,5 @@
+setwd("C:/Users/Michael/Desktop")
+
 ## read file
 df <- read.table("household_power_consumption.txt", sep=";", header=T)
 
@@ -16,7 +18,7 @@ power[,3:9] <- sapply(power[,3:9], as.numeric)
 
 ## draw histogram
 png("plot1.png")
-hist(power$Global_active_power, 
+hist(power$Global_active_power, breaks = seq(0, 3750, by = 250),
      col = "red", main = "Global Active Power",
      xlab = "Global Active Power (kilowatts)")
 dev.off()
