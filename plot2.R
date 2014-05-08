@@ -16,8 +16,8 @@ power$Time <- strptime(power$Time, format = "%Y-%m-%d %H:%M:%S")
 ## convert character to numeric in columns 3 to 9
 power[,3:9] <- sapply(power[,3:9], as.numeric)
 
-## draw histogram
-png("plot1.png")
-hist(power$Global_active_power,
-     col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+## draw plot2.png line plot
+png("plot2.png")
+plot(power$Time, power$Global_active_power, type = "l", xlab = "",
+     ylab = "Global Active Power (kilowatts)")
 dev.off()
